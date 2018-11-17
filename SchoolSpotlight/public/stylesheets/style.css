@@ -1,5 +1,4 @@
 body {
-  text-align: center;
   /* padding: 10px; */
   font: 14px , "Helvetica", Arial, sans-serif;
 }
@@ -11,4 +10,8 @@ a {
 h1 {
   text-align: center;
   padding-top: 5em;
+}
+
+.register{
+  padding: 5rem 30rem;
 }
