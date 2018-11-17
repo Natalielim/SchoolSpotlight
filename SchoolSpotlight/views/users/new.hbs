@@ -4,14 +4,32 @@
 
     <div class="form-group">
       <label for="user-username">Username</label>
-      <input type="text" name="username" class="form-control" id="user-username" placeholder="Username">
+      <input type="text" name="username" class="form-control" id="user-username" placeholder="Username" autocomplete="off">
 
       <label for="user-password">Password</label>
-      <input type="password" name="password" class="form-control" id="user-password" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="user-password" placeholder="Password" autocomplete="off">
+
+      <label for="user-password">Confirm Password</label>
+      <input class="form" type="password" required id="confirm_password" placeholder="Confirm Password" autocomplete="off">
     </div>
+
+    <script>
+      var password = document.getElementById("user-password");
+      var confirm_password = document.getElementById("confirm_password");
+
+      function validatePassword(){
+        if(password.value != confirm_password.value) {
+          confirm_password.setCustomValidity("Passwords Don't Match");
+        } else {
+          confirm_password.setCustomValidity('');
+        }
+      }
+      password.onchange = validatePassword;
+      confirm_password.onkeyup = validatePassword;
+    </script>
 
     <div class="text-right">
       <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+      <p>Have an account? <a href="/login" style="font-weight: bold">Log In</a></p>
   </form>
 </div>
