@@ -12,7 +12,7 @@ router.use(function(req, res, next) {
 router.get('/', function(req, res, next) {
   const currentUserId = req.session.userId;
 
-  Suggestion.find({}, 'title', (err, suggestions) => {
+  Suggestion.find({}, (err, suggestions) => {
     if (err) {
      console.error(err);
     } else {

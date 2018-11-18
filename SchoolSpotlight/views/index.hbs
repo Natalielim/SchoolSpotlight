@@ -2,13 +2,36 @@
 <p>Welcome to {{title}}</p>
 <a href="/suggestions/new"><p>NEW</p></a>
 
-<div>
-  <ul>
+<div class="justify-content-center">
+
     {{#each suggestions as |suggestion|}}
+    <ul style="list-style: none;">
       <li>
-        <a href="/suggestions/{{suggestion.id}}">{{suggestion.title}}</a>
-        {{suggestion.body}}
+        <div class="card mb-3">
+          <div class="card-body">
+            <a class="card-title text-center" href="/suggestions/{{suggestion.id}}">{{suggestion.title}}</a>
+            <p>{{suggestion.body}}</p>
+            <p>{{suggestion.points}}</p>
+            <div class="btn-group btn-group-sm">
+              <form action="/suggestions/{{suggestion.id}}" method = "post" class="inline-form">
+                <input type="hidden" name="title" id="suggestion-title" value="{{suggestion.title}}">
+                <input type="hidden" name="body" id="suggestion-body" value="{{suggestion.body}}">
+                <input type="hidden" name="points" id="suggestion-points">
+                <div id = "myBtn" onclick = "disable()">
+                  <button type="submit" class="upvote-button" >+</button>
+                </div>
+                <script>
+                    function disable() {
+                      document.getElementById("myBtn").remove();
+                    }
+                </script>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        </div>
       </li>
     {{/each}}
   </ul>
-<div>
+</div>
