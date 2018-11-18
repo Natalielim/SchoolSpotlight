@@ -3,8 +3,8 @@ html {
 }
 
 body {
-  /* padding: 10px; */
   font: 14px , "Helvetica", Arial, sans-serif;
+  font-weight: lighter;
 }
 
 a {
@@ -49,6 +49,10 @@ header {
 
 .card {
   width: 50em!important;
+}
+
+.card-title {
+  font-weight: normal!important;
 }
 
 .index {
