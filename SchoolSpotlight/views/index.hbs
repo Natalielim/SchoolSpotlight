@@ -1,4 +1,12 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
 
-<a href="/users/new">Sign Up</a>
+<div>
+  <ul>
+    {{#each suggestions as |suggestion|}}
+      <li>
+        <a href="/suggestions/{{suggestion.id}}">{{suggestion.title}}</a>
+      </li>
+    {{/each}}
+  </ul>
+<div>

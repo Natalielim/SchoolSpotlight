@@ -3,15 +3,25 @@ const router = express.Router();
 const User = require('../models/user');
 const auth = require('./helpers/auth')
 
-//Users index
-router.get('/', auth.requireLogin, (req, res, next) => {
-  User.find({}, 'username', function(err, users) {
-    if(err) {
-      console.error(err);
-    } else {
-      res.render('users/', { users: users });
-    }
-  });
+router.get('/', (req, res) => {
+ Suggestion.find({}, 'title', (err, suggestions) => {
+   console.log(suggestions);
+   if (err) {
+     console.error(err);
+   } else {
+     res.render('index', { suggestions: suggestions });
+   }
+ });
+});
+
+router.get('/', (req, res) => {
+ Room.find({}, 'topic', (err, rooms) => {
+   if (err) {
+     console.error(err);
+   } else {
+     res.render('rooms/index', { rooms });
+   }
+ });
 });
 
 // Users new
