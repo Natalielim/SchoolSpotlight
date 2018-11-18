@@ -1,17 +1,17 @@
-<div>
+<div class="register login">
   <form action="/suggestions" method="post">
     <legend>New Suggestion</legend>
 
     <div class="form-group">
       <label for="suggestion-title">Title</label>
-      <input type="text" name="title" class="form-control" id="suggestion-title" placeholder="Title">
-
+      <input type="text" name="title" class="form-control new-suggest" id="suggestion-title">
+      <br></br>
       <label for="suggestion-title">Description</label>
-      <input type="text" name="body" class="form-control" id="suggestion-body" placeholder="Description">
+      <textarea class="form-control new-suggest" id='suggestion-body' name="body" rows='3'></textarea>
     </div>
 
     <div class="text-right">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-outline-light">Submit</button>
     </div>
   </form>
 </div>

@@ -1,15 +1,58 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   /* padding: 10px; */
-
   font: 14px , "Helvetica", Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #88b1ea;
 }
 
-header{
+a:hover{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.sign-up {
+  margin-right: -30em;
+}
+
+.parallax {
+    background-image: url("../images/background.jpeg");
+    background-position: bottom;
+    min-height: 30em;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
   padding: 17em 0;
+  color: #6b97e5;
+  margin-bottom: -5em;
+}
+
+#suggestions {
+  margin-bottom: 5em;
+}
+
+.title {
+  margin-top: -5em;
+  margin-bottom: 1em;
+  color: #6b97e5;
+  font-size: 2em;
+}
+
+.card {
+  width: 50em!important;
+}
+
+.index {
+  justify-content: center;
 }
 
 h1 {
@@ -21,6 +64,71 @@ p{
   text-align: center;
 }
 
+.login {
+  color: #ffffff;
+  background-color: #6b97e5;
+  background-size: cover;
+  height: 45em;
+  background-position: center;
+  font-weight: lighter;
+}
+
+.login legend {
+  font-size: 40px;
+  font-weight: lighter;
+}
+
+.login-input .form-control {
+  color: white!important;
+}
+
+input:focus,
+.login-input .form-control:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: white!important;
+  outline: none;
+}
+
+.new-suggest, .new-suggest:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: white!important;
+  outline: none;
+}
+
+.login-submit-button {
+  padding-top: 2em;
+}
+
+.form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 .register{
   padding: 5rem 30rem;
+}
+
+.card-body a:hover{
+  color: #000000;
+}
+
+.vote {
+  max-height: 20px;
+}
+
+#agree {
+  padding-left: 10px;
+  padding-top: 1em;
+}
+
+.upvote-button{
+  margin-left: 15px;
 }

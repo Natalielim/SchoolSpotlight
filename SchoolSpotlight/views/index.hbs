@@ -1,19 +1,22 @@
-<header>
+<header class = "parallax">
   <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
-  <a href="/suggestions/new"><p>NEW</p></a>
+  <p>A direct way for students to suggest and vote on ways to improve their schools</p><br></br>
+  <a href="/suggestions/new"><p>NEW SUGGESTION</p></a>
+  <a class="button" href="#suggestions"><p class="text-center show-more">▼</p></a>
+</div>
+
 </header>
-
-<div class="justify-content-center">
-
+  <div id="suggestions">
+    <h1 class="title">Suggestions</h1>
     {{#each suggestions as |suggestion|}}
+    <div class="row index justify-content-center">
     <ul style="list-style: none;">
       <li>
         <div class="card mb-3">
           <div class="card-body">
             <a class="card-title text-center" href="/suggestions/{{suggestion.id}}">{{suggestion.title}}</a>
             <p>{{suggestion.body}}</p>
-            <p>{{suggestion.points}}</p>
+
             <div class="btn-group btn-group-sm">
               <form action="/suggestions/{{suggestion.id}}" method = "post" class="inline-form">
                 <!-- <input id="checkBox" type="checkbox" name="Completed" class="save-cb-state"> -->
@@ -21,8 +24,11 @@
                 <input type="hidden" name="title" id="suggestion-title" value="{{suggestion.title}}">
                 <input type="hidden" name="body" id="suggestion-body" value="{{suggestion.body}}">
                 <input type="hidden" name="points" id="suggestion-points">
-                <div id = "myBtn" >
-                  <button type="submit" class="upvote-button" >+</button>
+                <div id = "vote" class = "row align-items-center justify-content-center">
+                  <button type="submit" class="upvote-button" >✔️</button>
+                  <span>
+                    <p id = "agree">{{suggestion.points}} agree</p>
+                  </span>
                 </div>
                 <!-- <script>
                 (function() {
@@ -69,5 +75,6 @@
         </div>
       </li>
     {{/each}}
+  </div>
   </ul>
 </div>

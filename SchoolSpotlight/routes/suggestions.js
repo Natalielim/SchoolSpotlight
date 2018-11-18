@@ -10,33 +10,21 @@ router.get('/new', auth.requireLogin, (req, res, next) => {
 
 // Suggestions show
 router.get('/:id', auth.requireLogin, (req, res, next) => {
-  Suggestion.findById(req.params.id).sort({ points: -1 }).exec(function (err, suggestions) {
+
+    Suggestion.findById(req.params.id).exec(function (err, suggestions) {
+    Suggestion.sort({ points: -1 });
+
     if (err) { console.error(err) };
 
     res.render('suggestions/show', { suggestions });
   });
 });
 
-// Suggestions vote
-// router.post('/:id', auth.requireLogin, (req, res, next) => {
-//   Suggestion.findById(req.params.id, function(err, post) {
-//     post.points += parseInt(req.body.points);
-//     post.save(function(err, post) {
-//       if(err) { console.error(err) };
-//       return res.redirect(`/`);
-//     });
-//   });
-// });
-
 router.post('/:id', auth.requireLogin, (req, res, next) => {
-  console.log("************************");
   const suggestion = new Suggestion(req.body);
 
   Suggestion.findById(req.params.id).exec(function(err, suggestion) {
     suggestion.points += 1;
-    console.log("***********");
-
-    console.log(suggestion.points);
 
     suggestion.save(function(err, suggestion) {
       if(err) { console.error(err) };
