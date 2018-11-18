@@ -11,8 +11,7 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res, next) {
   const currentUserId = req.session.userId;
-
-  Suggestion.find({}, (err, suggestions) => {
+  Suggestion.find(req.params.id).sort({ points: -1 }).exec(function (err, suggestions) {
     if (err) {
      console.error(err);
     } else {

@@ -10,8 +10,7 @@ router.get('/new', auth.requireLogin, (req, res, next) => {
 
 // Suggestions show
 router.get('/:id', auth.requireLogin, (req, res, next) => {
-
-    Suggestion.findById(req.params.id).sort({ points: -1 }).exec(function (err, suggestions) {
+    Suggestion.findById(req.params.id).exec(function (err, suggestions) {
     if (err) { console.error(err) };
 
     res.render('suggestions/show', { suggestions });
