@@ -178,3 +178,7 @@ input:focus,
   border-radius: 50%!important;
   margin-left: 15px;
 }
+
+.upvote-button:hover{
+  border-color: #00b758!important;
+}
