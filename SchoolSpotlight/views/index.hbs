@@ -1,7 +1,7 @@
-<header class = "parallax">
+<header class = "parallax align-items-center">
   <h1>{{title}}</h1>
   <p>A direct way for students to suggest and vote on ways to improve their schools</p><br></br>
-  <a href="/suggestions/new"><p>NEW SUGGESTION</p></a>
+  <a href="/suggestions/new"><p>Create New Suggestion</p></a>
   <a class="button" href="#suggestions"><p class="text-center show-more">▼</p></a>
 </div>
 
@@ -14,13 +14,11 @@
       <li>
         <div class="card mb-3">
           <div class="card-body">
-            <a class="card-title text-center" href="/suggestions/{{suggestion.id}}">{{suggestion.title}}</a>
-            <p>{{suggestion.body}}</p>
+            <a class="card-title" href="/suggestions/{{suggestion.id}}">{{suggestion.title}}</a><br></br>
+            <p class="text-left">{{suggestion.body}}</p>
 
             <div class="btn-group btn-group-sm">
               <form action="/suggestions/{{suggestion.id}}" method = "post" class="inline-form">
-                <!-- <input id="checkBox" type="checkbox" name="Completed" class="save-cb-state"> -->
-
                 <input type="hidden" name="title" id="suggestion-title" value="{{suggestion.title}}">
                 <input type="hidden" name="body" id="suggestion-body" value="{{suggestion.body}}">
                 <input type="hidden" name="points" id="suggestion-points">
@@ -75,6 +73,13 @@
         </div>
       </li>
     {{/each}}
-  </div>
   </ul>
+</div>
+<div id="bottom"></div>
+  <div class="top-arrow">
+        <a class="button" title="To Top" id="top" href="#"><img src="/images/up.png" alt="Button to Top" width="25" height="30"></a>
+      </div>
+      <div class="bottom-arrow">
+        <a class="button" title="To Bottom" id="bottom" href="javascript: document.body.scrollIntoView(false);"><img src="/images/down.png" alt="Button to Bottom" width="25" height="30"></a>
+      </div>
 </div>

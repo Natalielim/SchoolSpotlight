@@ -21,9 +21,10 @@ a:hover{
 }
 
 .parallax {
-    background-image: url("../images/background.jpeg");
+    background-image: url("../images/background.png");
+    justify-content: center;
     background-position: bottom;
-    min-height: 30em;
+    max-height: 38em;
     /* background-attachment: fixed; */
     background-position: center;
     background-repeat: no-repeat;
@@ -31,9 +32,8 @@ a:hover{
 }
 
 header {
-  padding: 17em 0;
+  padding: 15em 0;
   color: #6b97e5;
-  margin-bottom: -5em;
 }
 
 #suggestions {
@@ -41,7 +41,7 @@ header {
 }
 
 .title {
-  margin-top: -5em;
+  padding-top: 1em;
   margin-bottom: 1em;
   color: #6b97e5;
   font-size: 2em;
@@ -57,11 +57,31 @@ header {
 
 h1 {
   text-align: center;
-
 }
 
-p{
+p {
   text-align: center;
+}
+
+#top {
+  position: fixed;
+  bottom: 80px;
+  right: 42px;
+  display: inline-block;
+}
+
+#back {
+  position: fixed;
+  bottom: 80px;
+  left: 42px;
+  display: inline-block;
+}
+
+#bottom {
+  position: fixed;
+  bottom: 30px;
+  right: 42px;
+  display: inline-block;
 }
 
 .login {
@@ -112,7 +132,7 @@ input:focus,
   border-radius: 0;
 }
 
-.register{
+.register {
   padding: 5rem 30rem;
 }
 
@@ -129,6 +149,15 @@ input:focus,
   padding-top: 1em;
 }
 
-.upvote-button{
+.btn-outline-light:hover {
+  color: #6b97e5!important;
+}
+
+.upvote-button {
+  height: 35px;
+  width: 35px;
+  background-color: white!important;
+  border: 2px solid #6b97e5!important;
+  border-radius: 50%!important;
   margin-left: 15px;
 }
