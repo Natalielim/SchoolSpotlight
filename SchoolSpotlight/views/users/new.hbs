@@ -1,16 +1,16 @@
-<div class = "register">
+<div class = "register login">
   <form action="/users" method="post">
     <legend>New User</legend>
 
     <div class="form-group">
       <label for="user-username">Username</label>
-      <input type="text" name="username" class="form-control" id="user-username" placeholder="Username" autocomplete="off">
+      <input type="text" name="username" class="form-control new-suggest new-user" id="user-username" autocomplete="off">
 
       <label for="user-password">Password</label>
-      <input type="password" name="password" class="form-control" id="user-password" placeholder="Password" autocomplete="off">
+      <input type="password" name="password" class="form-control new-suggest new-user" id="user-password" autocomplete="off">
 
       <label for="user-password">Confirm Password</label>
-      <input class="form" type="password" required id="confirm_password" placeholder="Confirm Password" autocomplete="off">
+      <input class="form-control  new-suggest new-user" type="password" required id="confirm_password" autocomplete="off">
     </div>
 
     <script>
@@ -29,7 +29,7 @@
     </script>
 
     <div class="text-right">
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <p>Have an account? <a href="/login" style="font-weight: bold">Log In</a></p>
+      <button type="submit" class="btn btn-outline-light">Submit</button>
+      <br></br><p>Have an account? <a href="/login" style="font-weight: bold">Log In</a></p>
   </form>
 </div>

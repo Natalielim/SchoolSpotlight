@@ -124,6 +124,11 @@ input:focus,
   outline: none;
 }
 
+.new-user {
+  margin-top: -.5em;
+  margin-bottom: .5em;
+}
+
 .login-submit-button {
   padding-top: 2em;
 }
