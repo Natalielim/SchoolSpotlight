@@ -108,6 +108,7 @@ p {
 
 input:focus,
 .login-input .form-control:focus {
+  color: white!important;
   -webkit-box-shadow: none;
   box-shadow: none;
   background-color: transparent;
