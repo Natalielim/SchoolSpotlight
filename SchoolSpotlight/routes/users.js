@@ -4,24 +4,7 @@ const User = require('../models/user');
 const auth = require('./helpers/auth')
 
 router.get('/', (req, res) => {
- Suggestion.find({}, 'title', (err, suggestions) => {
-   console.log(suggestions);
-   if (err) {
-     console.error(err);
-   } else {
-     res.render('index', { suggestions: suggestions });
-   }
- });
-});
 
-router.get('/', (req, res) => {
- Room.find({}, 'topic', (err, rooms) => {
-   if (err) {
-     console.error(err);
-   } else {
-     res.render('rooms/index', { rooms });
-   }
- });
 });
 
 // Users new

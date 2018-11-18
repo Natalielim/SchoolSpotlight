@@ -6,6 +6,7 @@
     {{#each suggestions as |suggestion|}}
       <li>
         <a href="/suggestions/{{suggestion.id}}">{{suggestion.title}}</a>
+        {{suggestion.body}}
       </li>
     {{/each}}
   </ul>

@@ -4,8 +4,17 @@ const Suggestion = require('../models/suggestion');
 const auth = require('./helpers/auth');
 
 // Suggestions index
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
+  Suggestion.findById({}, 'title', (err, suggestions) => {
+    console.log(suggestions);
+    console.log("****************************");
 
+    if (err) {
+     console.error(err);
+    } else {
+     res.render('index', { suggestions: suggestions });
+    }
+  });
 });
 
 // Suggestions new

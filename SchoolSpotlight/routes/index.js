@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../models/user');
+const Suggestion = require('../models/suggestion');
 
 router.use(function(req, res, next) {
   res.locals.title = "School Spotlight";
@@ -10,7 +11,14 @@ router.use(function(req, res, next) {
 
 router.get('/', function(req, res, next) {
   const currentUserId = req.session.userId;
-  res.render('index');
+
+  Suggestion.find({}, 'title', (err, suggestions) => {
+    if (err) {
+     console.error(err);
+    } else {
+     res.render('index', { suggestions: suggestions });
+    }
+  });
 });
 
 router.get('/login', function(req, res, next) {
