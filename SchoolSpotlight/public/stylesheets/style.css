@@ -24,8 +24,8 @@ a:hover{
     background-image: url("../images/background.png");
     justify-content: center;
     background-position: bottom;
-    max-height: 38em;
-    /* background-attachment: fixed; */
+    max-height: 45em;
+    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -154,6 +154,13 @@ input:focus,
   max-height: 20px;
 }
 
+.new {
+  color:#343a40!important;
+}
+
+.new:hover {
+ color:#fff!important;
+}
 #agree {
   padding-left: 10px;
   padding-top: 1em;
