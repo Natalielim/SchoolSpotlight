@@ -21,6 +21,8 @@
               <form action="/suggestions/{{suggestion.id}}" method = "post" class="inline-form">
                 <input type="hidden" name="title" id="suggestion-title" value="{{suggestion.title}}">
                 <input type="hidden" name="body" id="suggestion-body" value="{{suggestion.body}}">
+
+                <a href = "{{suggestion.petition}}">{{suggestion.petition}}</a>
                 <input type="hidden" name="points" id="suggestion-points">
                 <div id = "vote" class = "row align-items-center justify-content-center">
                   <button type="submit" class="upvote-button" >✔️</button>
