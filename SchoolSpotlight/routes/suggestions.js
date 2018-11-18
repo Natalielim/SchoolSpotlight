@@ -9,7 +9,7 @@ router.get('/new', auth.requireLogin, (req, res, next) => {
 });
 
 // Suggestions show
-router.get('/:id', auth.requireLogin, (req, res, next) => {
+router.get('/:id', (req, res, next) => {
     Suggestion.findById(req.params.id).exec(function (err, suggestions) {
     if (err) { console.error(err) };
 
