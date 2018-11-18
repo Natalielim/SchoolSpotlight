@@ -8,9 +8,13 @@ a {
   color: #00B7FF;
 }
 
+header{
+  padding: 17em 0;
+}
+
 h1 {
   text-align: center;
-  padding-top: 5em;
+
 }
 
 p{
