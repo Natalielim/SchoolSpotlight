@@ -24,18 +24,14 @@ router.get('/new', auth.requireLogin, (req, res, next) => {
 
 // Suggestions show
 router.get('/:id', auth.requireLogin, (req, res, next) => {
-  // Room.findById(req.params.id, function(err, room) {
-  // if(err) { console.error(err) };
+  Suggestion.findById(req.params.id).sort({ points: -1 }).exec(function (err, suggestions) {
+    if (err) { console.error(err) };
 
-  // Suggestion.sort({ points: -1 }).exec(function (err, suggestions) {
-  //   if (err) { console.error(err) };
-  //
-  //   res.render('suggestions/show', { suggestion: suggestion, suggestionId: req.params.id });
-  // });
+    res.render('suggestions/show', { suggestions });
+  });
 });
 
 // Suggestions create
-// router.post('/', auth.requireLogin, (req, res, next) => {
 router.post('/', (req, res, next) => {
   const suggestion = new Suggestion(req.body);
 
